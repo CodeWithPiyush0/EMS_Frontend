@@ -13,7 +13,7 @@ const EditDepartment = () => {
         const fetchDepartments = async () => {
             setDeptLoading(true)
             try {
-                const response = await axios.get(`http://localhost:3000/api/department/${id}`, {
+                const response = await axios.get(`https://ems-server-khaki.vercel.app/api/department/${id}`, {
                     headers: {
                         "Authorization" : `Bearer ${localStorage.getItem('token')}`
                     }

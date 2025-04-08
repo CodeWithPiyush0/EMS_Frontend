@@ -43,7 +43,7 @@ const AddSalary = () => {
         
 
         try {
-            const response = await axios.post(`http://localhost:3000/api/salary/add`, employee, {
+            const response = await axios.post(`https://ems-server-khaki.vercel.app/api/salary/add`, employee, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`,
                     "Content-Type": "application/json"

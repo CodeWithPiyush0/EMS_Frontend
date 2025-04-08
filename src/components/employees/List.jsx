@@ -13,7 +13,7 @@ const List = () => {
     const fetchEmployees = async () => {
       setEmpLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/api/employee', {
+        const response = await axios.get('https://ems-server-khaki.vercel.app/api/employee', {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem('token')}`
           }
@@ -26,7 +26,7 @@ const List = () => {
             dept_name: emp.department.dept_name,
             name: emp.userID.name,
             dob: new Date(emp.dob).toLocaleDateString(),
-            profileImage: `http://localhost:3000/uploads/${emp.userID.profileImage}`, // Corrected path
+            profileImage: `https://ems-server-khaki.vercel.app/uploads/${emp.userID.profileImage}`, // Corrected path
             action: (<EmployeeButtons id={emp._id} />)
           }));
           setEmployees(data);

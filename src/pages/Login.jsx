@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
         try{
             console.log("Sending Data:", { email, password });
-            const response = await axios.post("http://localhost:3000/api/auth/login", {email, password})
+            const response = await axios.post("https://ems-server-khaki.vercel.app/api/auth/login", {email, password})
             if( response.data.success ){
                 login(response.data.user)
                 localStorage.setItem("token", response.data.token)
